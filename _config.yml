@@ -1,0 +1,45 @@
+# Jekyll Configuration — 공명 통합 소개 사이트
+title: "공명"
+description: "일상의 문제를 기술로 풀어내는 서비스들을 만듭니다"
+lang: ko
+
+markdown: kramdown
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# SEO Configuration — GitHub Pages 유저 사이트
+url: "https://mementomoricarpediem.github.io"
+baseurl: ""
+
+# Open Graph / Social
+author: 공명
+
+# Collections — 서비스 목록
+collections:
+  services:
+    output: true
+    permalink: /services/:name/
+
+# Default Front Matter
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: services
+    values:
+      layout: default
+
+# Exclude files from build
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules

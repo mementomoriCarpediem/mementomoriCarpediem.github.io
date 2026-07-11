@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mementomoricarpediem.github.io/sitemap.xml
