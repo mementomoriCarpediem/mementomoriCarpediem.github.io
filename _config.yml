@@ -16,6 +16,7 @@ baseurl: ""
 
 # Open Graph / Social
 author: 공명
+logo: /assets/images/logo.svg
 
 # Collections — 서비스 목록
 collections:

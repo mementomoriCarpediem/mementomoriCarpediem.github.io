@@ -64,10 +64,18 @@ a:hover {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
 }
 
 .site-logo:hover {
   text-decoration: none;
+}
+
+.site-logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
 }
 
 .site-nav {
