@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'ko' }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO -->
+    {% seo %}
+
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a href="{{ '/' | relative_url }}" class="site-logo">공명</a>
+        <nav class="site-nav" aria-label="주요 메뉴">
+          <a href="{{ '/' | relative_url }}">홈</a>
+          <a href="{{ '/services/' | relative_url }}">서비스</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="content-wrapper">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="footer-logo">공명</div>
+        <p class="footer-tagline">일상의 문제를 기술로 풀어내는 서비스들을 만듭니다</p>
+        <div class="footer-links">
+          <a href="{{ '/' | relative_url }}">홈</a>
+          <a href="{{ '/services/' | relative_url }}">서비스</a>
+          <a href="mailto:resonance.zorba@gmail.com">문의</a>
+        </div>
+        <p class="copyright">
+          © {{ site.time | date: "%Y" }} 공명 · 사업자등록번호 520-22-02348 · 문의:
+          <a href="mailto:resonance.zorba@gmail.com">resonance.zorba@gmail.com</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
