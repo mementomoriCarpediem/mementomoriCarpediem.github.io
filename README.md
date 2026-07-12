@@ -29,6 +29,8 @@ bundle exec jekyll build
 - `index.md` — 홈(회사 소개) 페이지
 - `services.md` — 서비스 목록 페이지 (`/services/`)
 - `_services/` — 서비스별 상세 페이지를 담는 collection
+- `services/<app-id>/` — 서비스(앱)별 스토어 제출용 법적 고지 페이지 (개인정보처리방침/이용약관/고객지원, `/services/<app-id>/{privacy-policy,terms,support}/`)
+- `_templates/` — 신규 서비스용 법적 고지 페이지 템플릿 (빌드 제외 대상)
 - `404.html` — 404 페이지
 - `robots.txt` — 크롤러 정책 + sitemap 경로
 
@@ -58,6 +60,24 @@ bundle exec jekyll build
 
 3. `order` 값으로 홈/서비스 목록 페이지에서의 정렬 순서를 지정합니다.
 4. 빌드하면 `/services/<service-id>/` 경로로 자동 생성되며, 홈(`index.md`)과 서비스 목록(`services.md`) 카드 그리드에도 자동으로 나타납니다. 별도의 링크 추가 작업이 필요 없습니다.
+
+### 법적 고지 페이지(개인정보처리방침/이용약관/고객지원) 추가 방법
+
+앱스토어/플레이스토어 제출 시 요구되는 privacy-policy · terms · support 문서를 서비스별로 `/services/<app-id>/` 하위에 둡니다.
+
+1. `_templates/` 디렉토리의 3개 템플릿을 새 서비스 디렉토리로 복사합니다.
+
+   ```bash
+   mkdir -p services/<app-id>
+   cp _templates/privacy-policy-template.md services/<app-id>/privacy-policy.md
+   cp _templates/terms-template.md services/<app-id>/terms.md
+   cp _templates/support-template.md services/<app-id>/support.md
+   ```
+
+2. 각 파일에서 `{{APP_NAME}}` / `{{CONTACT_EMAIL}}` / `{{EFFECTIVE_DATE}}` 플레이스홀더와 `permalink`의 `REPLACE_ID`를 실제 `<app-id>`로 치환합니다.
+3. `<!-- TODO: 앱별 확인 필요 -->` 주석이 달린 조항(수집 항목, 제3자 제공, 위탁 업체 등)을 실제 서비스 데이터 처리 현황에 맞게 채웁니다.
+4. 해당 서비스의 `_services/<app-id>.md` front matter에 `legal: true`를 추가하면 서비스 상세 페이지 하단에 3개 문서 링크가 자동으로 노출됩니다 (레이아웃의 `service-legal-links.html` 인클루드가 `page.slug` 기반으로 URL을 생성하므로 하드코딩 불필요).
+5. 빌드 후 `/services/<app-id>/{privacy-policy,terms,support}/` 3개 URL이 정상 노출되는지 확인합니다.
 
 ## 배포
 

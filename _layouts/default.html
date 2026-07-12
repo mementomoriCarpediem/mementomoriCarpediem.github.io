@@ -26,6 +26,9 @@
 
     <main class="content-wrapper">
       {{ content }}
+      {% if page.collection == "services" and page.legal %}
+        {% include service-legal-links.html %}
+      {% endif %}
     </main>
 
     <footer class="site-footer">
