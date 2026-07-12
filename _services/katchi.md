@@ -5,6 +5,7 @@ description: "주한미군 커뮤니티를 위한 한국 생활 가이드, Katch
 summary: "U.S. Military Community Life Guide in Korea (주한미군 커뮤니티 생활 가이드)"
 external_url: "https://mementomoricarpediem.github.io/katchi-web/"
 order: 3
+legal: true
 ---
 
 <div class="service-hero">

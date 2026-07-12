@@ -19,3 +19,6 @@ vendor/
 .vscode/
 *.swp
 *.swo
+
+# Cursor/VSCode Multi-root Workspace (개인 IDE 설정 — AIM 자동 관리)
+*.code-workspace

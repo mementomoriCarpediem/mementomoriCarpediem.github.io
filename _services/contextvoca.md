@@ -5,6 +5,7 @@ description: "AI 문맥 기반 단어 학습 앱, ContextVoca입니다."
 summary: "AI 문맥 기반 단어 학습 앱"
 external_url: "https://mementomoricarpediem.github.io/contextvoca-web/"
 order: 2
+legal: true
 ---
 
 <div class="service-hero">
